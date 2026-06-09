@@ -1,0 +1,473 @@
+/*
+    components by jadeprogramma
+    site:   jadeprogramma.neocities.org
+    email:  jadeprogramma@proton.me
+*/
+
+@font-face {
+    font-family: "Tahoma";
+    src: url(/assets/fonts/windows-xp-tahoma/windows-xp-tahoma.otf);
+}
+
+@font-face {
+    font-family: "Trebuchet";
+    src: url(assets/fonts/windows-xp-title-trebuchet-ms-bold-10pt/windows-xp-title-trebuchet-ms-bold-10pt.otf);
+}
+
+@font-face {
+    font-family: "Lucida Console";
+    src: url(assets/fonts/lucida-console/lucon.ttf);
+}
+
+/* NOTE START: this can be deleted or doesn't have to be copied, this is just for display purposes */
+
+body {
+    background-image: url(assets/windows-xp-desktop-background-wallpaper-bliss-800x600.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header {
+    text-align: center;
+
+    a {
+        color: white
+    }
+
+    h1 {
+        font-family: "Trebuchet";
+
+        color: white;
+
+        text-shadow: 2px 2px 0 black;
+    }
+
+    h2 {
+        font-family: "Tahoma";
+        font-size: 2em;
+
+        color: white;
+
+        text-shadow: 2px 2px 0 black;
+    }
+}
+
+main {
+    display: flex;
+    justify-content: space-evenly;
+
+    width: 100%;
+    height: 100%;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+
+    gap: 20px;
+
+    height: 100%;
+}
+
+/* NOTE END */
+
+
+/* Window */
+
+.window {
+    outline-width: 0.25px;
+    outline-color: mediumblue;
+    outline-style: solid;
+
+    border-style: solid;
+    border-color: transparent;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    background: radial-gradient(blue, dodgerblue) border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    font-family: "Trebuchet";
+
+    &::before {
+        content: "";
+
+        background: black;
+        filter: blur(10px);
+
+        display: block;
+
+        width: inherit;
+        height: inherit;
+
+        position: absolute;
+        transform: translate(10px, 5px);
+
+        z-index: -1;
+    }
+
+    /* Command Prompt */
+
+    &.cmd {
+        .window-content {
+            background-color: black;
+
+            margin: 0;
+
+            padding: 0;
+
+            overflow: hidden;
+
+            textarea {
+                background-color: black;
+
+                color: white;
+
+                font-family: "Lucida Console";
+
+                border: none;
+
+                box-sizing: border-box;
+
+                width: 100%;
+                height: 100%;
+
+                resize: none;
+            }
+
+            textarea:focus {
+                outline: none;
+
+                box-shadow: none;
+
+                border: none;
+            }
+        }
+    }
+
+    /* Progress Bar */
+
+    &.progress {
+        max-width: unset;
+        max-height: unset;
+    }
+
+    .window-title-group {
+        display: flex;
+        justify-content: space-between;
+
+        margin: 3px;
+
+        .window-title {
+            color: white;
+
+            text-shadow: 1px 1px 0 black;
+
+            align-content: center;
+
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .window-button-group {
+            display: flex;
+            gap: 2.5px;
+
+            .window-button {
+                background: radial-gradient(farthest-corner at 45px -10px, lightblue 5%, blue 25%, dodgerblue 70%);
+
+                color: white;
+
+                text-align: center;
+
+                border-style: solid;
+                border-color: white;
+                border-width: 0.5px;
+                border-radius: 1.7px;
+
+                width: 25px;
+                height: 25px;
+
+                &.close {
+                    background: radial-gradient(farthest-corner at 45px -10px, ghostwhite 20%, orangered 80%);
+                }
+            }
+
+            .window-button:hover {
+                filter: contrast(2);
+            }
+
+            .window-button:active {
+                filter: contrast(0.75);
+            }
+        }
+    }
+
+    .window-content {
+        outline-width: 0.25px;
+        outline-color: mediumblue;
+        outline-style: solid;
+
+        background-color: floralwhite;
+
+        font-family: "Tahoma";
+        font-size: 1.2rem;
+
+        min-height: 0;
+        flex-grow: 1;
+
+        padding: 0 1rem 1rem;
+
+        overflow: scroll;
+
+        button {
+            background-color: floralwhite;
+
+            font-family: "Tahoma";
+            font-size: 1.2rem;
+
+            border-radius: 2px;
+
+            margin: 0 4px;
+        }
+
+        button:active {
+            outline-width: 1.5px;
+            outline-color: black;
+            outline-style: solid;
+
+            filter: contrast(0.75);
+        }
+
+        button:hover {
+            outline-width: 1.5px;
+            outline-color: black;
+            outline-style: solid;
+
+            text-decoration: underline dotted 1px black;
+        }
+
+        img {
+            object-fit: cover;
+            aspect-ratio: 1;
+
+            max-width: 97%;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 0;
+        }
+
+        progress {
+            appearance: none;
+            -webkit-appearance: none;
+
+            background-color: white;
+
+            display: block;
+
+            width: 97%;
+
+            margin: 10px 0 0;
+
+            border-style: groove;
+            border-width: 2px;
+            border-radius: 3px;
+
+            overflow: hidden;
+        }
+
+        /* Progress Bar cont'd */
+
+        progress::-webkit-progress-bar {
+            background-color: white;
+
+            border-radius: 0;
+        }
+
+        progress::-webkit-progress-value {
+            background-image: linear-gradient(
+                90deg,
+                lawngreen 0px,
+                white 4px,
+                white 4px,
+                limegreen 12px
+            );
+
+            background-size: 12px 100%;
+
+            transition: width 0.4s ease;
+
+            border-radius: 0;
+        }
+
+        progress::-moz-progress-bar {
+            background-color: white;
+
+            background-image: linear-gradient(
+                90deg,
+                lawngreen 0px,
+                white 4px,
+                white 4px,
+                limegreen 12px
+            );
+
+            background-size: 12px 100%;
+
+            transition: width 0.4s ease;
+
+            border-radius: 0;
+        }
+
+        option {
+            font-family: "Tahoma";
+        }
+
+        select {
+            background-color: white;
+
+            font-family: "Tahoma";
+            font-size: 1.2rem;
+
+            margin: 0 4px;
+        }
+
+        textarea {
+            max-width: 97%;
+
+            font-family: "Lucida Console";
+
+            margin-top: 4px;
+        }
+    }
+}
+
+
+/* Notification Speech Bubble */
+
+.notification-speech-bubble {
+    background-color: lightyellow;
+
+    display: flex;
+    flex-direction: column;
+
+    border-style: solid;
+    border-color: black;
+    border-width: 1.5px;
+    border-radius: 10px;
+
+    font-family: "Tahoma";
+    font-size: 1.2rem;
+
+    padding: 3px;
+
+    &::before {
+        content: "";
+
+        background: black;
+        filter: blur(10px);
+
+        display: block;
+
+        width: inherit;
+        height: inherit;
+
+        position: absolute;
+        transform: translate(10px, 5px);
+
+        z-index: -1;
+    }
+
+    .speech-bubble-title-group {
+        display: flex;
+        justify-content: space-between;
+
+        margin: 3px 3px 0;
+
+        .speech-bubble-title {
+            font-weight: bold;
+
+            align-content: center;
+
+            overflow: hidden;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        .speech-bubble-close {
+            background-color: ivory;
+
+            color: darkgrey;
+
+            text-align: center;
+
+            border-style: solid;
+            border-color: darkgrey;
+            border-width: 0.5px;
+            border-radius: 1.7px;
+
+            width: 25px;
+            height: 25px;
+        }
+
+        .speech-bubble-close:active {
+            filter: contrast(0.75);
+        }
+    }
+
+    .speech-bubble-content {
+        margin: 0;
+
+        padding: 0 5px;
+
+        button {
+            background-color: lightyellow;
+
+            font-family: "Tahoma";
+            font-size: 1.2rem;
+
+            border-radius: 2px;
+
+            margin: 0 4px 4px;
+        }
+
+        button:active {
+            outline-width: 1.5px;
+            outline-color: black;
+            outline-style: solid;
+
+            filter: contrast(0.75);
+        }
+
+        button:hover {
+            outline-width: 1.5px;
+            outline-color: black;
+            outline-style: solid;
+
+            text-decoration: underline dotted 1px black;
+        }
+
+        p {
+            margin: 1rex auto;
+        }
+    }
+}
+
+/*
+
+    CREDITS:
+
+    - “Windows XP Title Trebuchet MS Bold 10pt” by Kusanagi34675 (https://fontstruct.com/fontstructions/show/2635496/windows-xp-title-trebuchet-ms-bold-10pt)
+
+    - The FontStruction “Windows XP Tahoma” (https://fontstruct.com/fontstructions/show/1888398) by “tiono785” is licensed under a Creative Commons Attribution Share Alike license (http://creativecommons.org/licenses/by-sa/3.0/).
+    “Windows XP Tahoma” was originally cloned (copied) from the FontStruction “fs Tahoma 8px” (https://fontstruct.com/fontstructions/show/735108) by “ETHproductions”, which is licensed under a Creative Commons Attribution Share
+    Alike license (http://creativecommons.org/licenses/by-sa/3.0/).
+
+    - "Lucida Console" licensed by Microsoft
+
+    - Windows XP created by Microsoft
+
+*/
