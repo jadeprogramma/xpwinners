@@ -8,7 +8,7 @@ you can edit the content of the components as you wish. these components have be
 
 it would be best to know how to code in html and css. javascript is not necessary to make the components usable, unless you add functionality to it that is not included in these components.
 
-any issues? create an issue on the github repository's [issue tracker](https://github.com/jadeprogramma/xpwinners/issues), or email me.
+any bugs? create an issue on the github repository's [issue tracker](https://github.com/jadeprogramma/xpwinners/issues), or email me.
 
 any questions? email me at [jadeprogramma@proton.me](mailto:jadeprogramma@proton.me).
 
