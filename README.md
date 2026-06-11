@@ -12,6 +12,18 @@ any bugs? create an issue on the github repository's [issue tracker](https://git
 
 any questions? email me at [jadeprogramma@proton.me](mailto:jadeprogramma@proton.me).
 
+## how to use
+
+the css was coded to minimal edits within the main styles.css file. all styling edits can be done within the html code.
+
+to edit the sizing of the components, add inline styling to the container tags.
+
+```html
+
+<div class="window" style="width: 360px; height: 320px;">
+
+```
+
 <hr>
 
 ### credits:
